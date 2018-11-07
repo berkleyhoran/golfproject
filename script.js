@@ -4,6 +4,8 @@ let numholes = 18;
 var courseId = 11819;
 var thisteetype = 1;
 var yards = [];
+var par = [];
+var hcp = [];
 var mycourse;
 
 (function(){
@@ -36,6 +38,7 @@ function loadCourse(courseId) {
             mycourse = JSON.parse(this.responseText);
             console.log(mycourse);
 
+
             let teeArray = mycourse.data.holes[0].teeBoxes;
             
             /*$(this).siblings*/
@@ -45,9 +48,12 @@ function loadCourse(courseId) {
             }
             $('.teeselect').show(100)
             yards = [];
+            par = [];
+            hcp = [];
             for(let z = 0; z < numholes; z++){
-                
                 yards.push(mycourse.data.holes[z].teeBoxes[thisteetype].yards);
+                par.push(mycourse.data.holes[z].teeBoxes[thisteetype].par);
+                hcp.push(mycourse.data.holes[z].teeBoxes[thisteetype].hcp);
             }
 
             buildcard();
@@ -71,7 +77,7 @@ function buildcard() {
     $(".card").children().remove()
     $('.card').show(0);
     for(let i = 1; i <= numholes; i++){
-        $(".card").append(`<div id="col${i}" class="column"><h3>Hole ${i}, ${yards[i - 1]} Yards</h3></div>`);
+        $(".card").append(`<div id="col${i}" class="column"><h3>Hole ${i}</h3><p> ${yards[i - 1]} Yards </p><p> Par ${par[i - 1]}</p><p> Handicap ${hcp[i - 1]}</p></br></div>`);
     }
     
     addholes();
