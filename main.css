@@ -1,0 +1,28 @@
+h1{
+    margin:100px 0px 0px 100px;
+}
+p {
+    margin: 0px;
+    float:left;
+}
+.card{
+    display:flex;
+    flex-wrap: wrap;
+    padding:50px;
+    margin:30px;
+}
+.column{
+    display:flex;
+    flex-flow:column;
+    margin: 20px;
+    
+}
+.teeselect{
+    display:none;
+}
+#hole{
+    width:10px;
+}
+.teeselect, .courses{
+    margin:100px 0px 0px 100px;
+}
