@@ -12,12 +12,12 @@
 <body>
     <div class="wrapper">
     <h1>Golf Scorecard</h1>
-     <div class="scorebox">
-        <div class="score" onclick="changename1();">player1:</div><p id="1">0</p>
-        <div class="score" onclick="changename2();">player2:</div><p id="2">0</p>
-        <div class="score" onclick="changename3();">player3:</div><p id="3">0</p>
-        <div class="score" onclick="changename4();">player4:</div><p id="4">0</p>
-    </div>
+        <div class="scorebox">
+            <div class="score"><p><input id="p1n" placeholder="Set name" onchange="changename(this)"/></p></div><p id="1">0</p><p>,</p><p id="par1">0<p>
+            <div class="score"><p><input id="p2n" placeholder="Set name" onchange="changename(this)"/></p></div><p id="2">0</p><p>,</p><p id="par2">0<p>
+            <div class="score"><p><input id="p3n" placeholder="Set name" onchange="changename(this)"/></p></div><p id="3">0</p><p>,</p><p id="par3">0<p>
+            <div class="score"><p><input id="p4n" placeholder="Set name" onchange="changename(this)"/></p></div><p id="4">0</p><p>,</p><p id="par4">0<p>
+        </div>
     <div class="selectwrapper">
     <select class="courses" onchange="loadCourse(this.value)">
 

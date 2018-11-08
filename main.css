@@ -63,4 +63,8 @@ select{
 }
 .score{
     color:white;
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+    font-size:15px;
+    
 }

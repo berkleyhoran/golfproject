@@ -3,6 +3,10 @@ var numplayers = 4;
 let numholes = 18;
 var courseId = 11819;
 var thisteetype = 1;
+var p1name = "Player 1";
+var p2name = "Player 2";
+var p3name = "Player 3";
+var p4name = "Player 4";
 var p1score = [];
 var p2score = [];
 var p3score = [];
@@ -150,9 +154,21 @@ function updatescore(value){
                 total4 += p4score[r] << 0;
             }
 
+            var totalpar = 0;
+            for (var o = 0; o < par.length; o++) {
+                totalpar += par[o] << 0;
+            }
+
 
     $("#1").text(total/numplayers)
+    $("#par1").text(total/numplayers - totalpar)
+
     $("#2").text(total2/numplayers)
+    $("#par2").text(total2/numplayers - totalpar)
+
     $("#3").text(total3/numplayers)
+    $("#par3").text(total3/numplayers - totalpar)
+
     $("#4").text(total4/numplayers)
+    $("#par4").text(total4/numplayers - totalpar)
 }
