@@ -10,8 +10,15 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Golf Scorecard</h1>
     <div class="wrapper">
+    <h1>Golf Scorecard</h1>
+     <div class="scorebox">
+        <div class="score" onclick="changename1();">player1:</div><p id="1">0</p>
+        <div class="score" onclick="changename2();">player2:</div><p id="2">0</p>
+        <div class="score" onclick="changename3();">player3:</div><p id="3">0</p>
+        <div class="score" onclick="changename4();">player4:</div><p id="4">0</p>
+    </div>
+    <div class="selectwrapper">
     <select class="courses" onchange="loadCourse(this.value)">
 
     </select>
@@ -21,17 +28,22 @@
         <option value="2"> 2 Players</option>
         <option value="3"> 3 Players</option>
         <option value="4"> 4 Players</option>
-        <option value="5"> 5 Players</option>
     </select>
     <select class="teeselect" onchange="chooseTee(this.value)">
 
     </select>
+
+    </div>
+   
     </div>
 
     <div class="card">
         
         
     </div>
+
     
+
 </body>
+
 </html>

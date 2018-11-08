@@ -1,28 +1,66 @@
-h1{
-    margin:100px 0px 0px 100px;
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,700');
+p, h1, h2, h3 {
+    color:#FFFFFF;
+    font-family: 'Bitter', serif;
 }
 p {
     margin: 0px;
     float:left;
 }
-.card{
+
+body {
+    background-color: #429C52;
+    padding:0 0 0 0;
+    margin: 0 0 0 0;
+}
+select{
+    margin-top:40px;
+    border: none;
+    border-radius: 0px;
+    width:200px;
+}
+.wrapper{
+    margin:20px 0px 0px 100px;
     display:flex;
+    flex-flow:column;
+}
+.card{
+    background-color:#163B18;
+    display:flex;
+    align-items: center;
     flex-wrap: wrap;
-    padding:50px;
-    margin:30px;
+    padding:0px 100px 0px 100px;
+    margin:50px 0 0 0;
 }
 .column{
     display:flex;
     flex-flow:column;
     margin: 20px;
+    height:250px;
     
 }
 .teeselect{
     display:none;
 }
-#hole{
-    width:10px;
+.hole{
+    width:30px;
+    float:right;
+    outline: none;
+}
+.hole:focus{
+    border-color:red;
+    
 }
 .teeselect, .courses{
-    margin:100px 0px 0px 100px;
+    
+}
+.scorebox{
+    display:flex;
+    justify-content: space-between;
+    margin-top:10px;
+    height:20px;
+    width:50%;
+}
+.score{
+    color:white;
 }
