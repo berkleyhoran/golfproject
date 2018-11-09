@@ -18,6 +18,7 @@ var mycourse;
 
 (function(){
     loadDoc();
+    $(".selectwrapper").hide();
 })();
 
 function loadDoc() {
@@ -98,11 +99,35 @@ function buildcard() {
 function addholes() {
     for(p = 1; p <= numplayers; p++){
         for(h = 1; h <= numholes; h++){
-        $("#col" + h).append(`<span><p id="player${p}">Player ${p} : </p><input class="hole" type="text" id="p${p}h${h}" onchange="updatescore(this);"/></span>`);
+        let name = window["p" + p + "name"];
+        $("#col" + h).append(`<span><p id="player${p}">${name} : </p><input class="hole" type="text" id="p${p}h${h}" onchange="updatescore(this);"/></span>`);
     }}
 }
 function choosePlayer(players){
-    numplayers = players;
+            numplayers = players;
+        $("#hide1").hide();
+        $("#hide2").hide();
+        $("#hide3").hide();
+        $("#hide4").hide();
+    if(numplayers == 1){
+        $("#hide1").show();
+        
+    }
+    if(numplayers == 2){
+        $("#hide1").show();
+        $("#hide2").show();
+    }
+    if(numplayers == 3){
+        $("#hide1").show();
+        $("#hide2").show();
+        $("#hide3").show();
+    }
+    if(numplayers == 4){
+        $("#hide1").show();
+        $("#hide2").show();
+        $("#hide3").show();
+        $("#hide4").show();
+    }
     buildcard();
 }
 function updatescore(value){
@@ -171,4 +196,44 @@ function updatescore(value){
 
     $("#4").text(total4/numplayers)
     $("#par4").text(total4/numplayers - totalpar)
+}
+
+function changename(thisname){
+     if (thisname.id == "p1n"){
+        if($("#p1n").val() != p2name ||  $("#p1n").val() != p3name || $("#p1n").val() != p4name){
+            p1name = $("#p1n").val();
+        }else{
+            p1name = "Guest1" 
+        }
+        $(thisname).replaceWith($('<p id="p1n">' + p1name + '</p>')); 
+     }
+     if (thisname.id == "p2n"){
+        if($("#p2n").val() != p1name ||  $("#p2n").val() != p3name || $("#p2n").val() != p4name){
+            p2name = $("#p2n").val();
+        }else{
+            p2name = "Guest2"  
+        }
+        
+        $(thisname).replaceWith($('<p id="p2n">' + p2name + '</p>'));
+     }
+     if (thisname.id == "p3n"){
+        if($("#p3n").val() != p1name ||  $("#p3n").val() != p2name || $("#p3n").val() != p4name){
+            p3name = $("#p3n").val();
+        }else{
+            p3name = "Guest3";  
+        }
+        $(thisname).replaceWith($('<p id="p3n">' + p3name + '</p>'));
+     }
+     if (thisname.id == "p4n"){
+        if($("#p4n").val() != p1name ||  $("#p4n").val() != p2name || $("#p4n").val() != p3name){
+            p4name = $("#p4n").val();
+        }else{
+            p4name = "Guest4";  
+        }
+        p4name = $("#p4n").val();
+        $(thisname).replaceWith($('<p id="p4n">' + p4name + '</p>'));
+     }
+
+     $(".selectwrapper").show();
+
 }
