@@ -70,5 +70,16 @@ select{
 }
 #p1n, #p2n, #p3n, #p4n{
     width:100px;
-    background-color:
+}
+.thumbnail{
+    width:200px;
+    margin-left:250px;
+    border:5px solid white;
+    background-size: cover;
+}
+.titlediv{
+    width:100%;
+    height:100px;
+    display:flex;
+    
 }

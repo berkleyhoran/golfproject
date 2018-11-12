@@ -48,7 +48,7 @@ function loadCourse(courseId) {
             mycourse = JSON.parse(this.responseText);
             console.log(mycourse);
 
-
+            let bgimg = mycourse.data.thumbnail;
             let teeArray = mycourse.data.holes[0].teeBoxes;
             
             /*$(this).siblings*/
@@ -58,6 +58,7 @@ function loadCourse(courseId) {
             }
 
             $('.teeselect').show(100)
+            $('.thumbnail').css(`background-image`, `url("${bgimg}")`);  
 
             yards = [];
             par = [];
