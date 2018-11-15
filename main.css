@@ -73,7 +73,7 @@ select{
 }
 .thumbnail{
     width:200px;
-    margin-left:250px;
+    margin-left:25px;
     border:5px solid white;
     background-size: cover;
 }
