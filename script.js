@@ -84,6 +84,13 @@ function chooseTee(value){
     thisteetype = value;
     loadCourse($(".courses :selected").val());
     loadCourse($(".courses :selected").val());
+
+    p1score = [];
+    p2score = [];
+    p3score = [];
+    p4score = [];
+
+    updatescore(0)
 }
 
 function buildcard() {
